@@ -9,7 +9,8 @@ sudo apt install -y \
 	libvips imagemagick libmagickwand-dev mupdf mupdf-tools \
 	redis-tools sqlite3 libsqlite3-0 fzf ripgrep bat eza zoxide plocate btop apache2-utils fd-find \
     software-properties-common zsh gnome-tweaks gnome-shell-extension-manager virt-manager qemu-kvm mc \
-    ca-certificates chromium vlc virt-manager usb-creator-gtk gparted 
+    ca-certificates chromium vlc virt-manager usb-creator-gtk gparted gnome-sushi gnome-tweak-tool gnome-shell-extension-manager \
+    gnome-shell-extension-manager pipx
 
 
 # Docker 
@@ -37,17 +38,6 @@ sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flat
 # Flameshot is a nice step-up over the default Gnome screenshot tool
 sudo apt install -y flameshot
 
-# Gives you previews in the file manager when pressing space
-sudo apt install -y gnome-sushi
-sudo apt install -y gnome-tweak-tool
-
-# GitKraken
-cd /tmp
-wget https://release.gitkraken.com/linux/gitkraken-amd64.deb
-sudo apt install /tmp/gitkraken-amd64.deb
-rm -rf /tmp/gitkraken-amd64.deb
-cd -
-
 # Oh My Posh
 ## Install Oh my Posh
 sudo wget https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/posh-linux-amd64 -O /usr/local/bin/oh-my-posh
@@ -72,23 +62,6 @@ rm -rf ~/.fonts/JetBrainsMono
 unzip ~/JetBrainsMono.zip -d ~/.fonts/JetBrainsMono
 fc-cache -fv
 
-
-# Typora
-wget -qO - https://typora.io/linux/public-key.asc | sudo tee /etc/apt/trusted.gpg.d/typora.asc
-sudo add-apt-repository -y 'deb https://typora.io/linux ./'
-sudo apt update
-sudo apt install -y typora
-
-# Misc tools and apps
-sudo apt install -y vlc gnome-shell-extension-manager
-
-# Visual Studio Code
-cd /tmp
-wget -O code.deb 'https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64'
-sudo apt install -y ./code.deb
-rm code.deb
-cd -
-
 # Add local fonts
 mkdir -p ~/.local/share/fonts
 
@@ -98,10 +71,6 @@ unzip CascadiaMono.zip -d CascadiaFont
 cp CascadiaFont/*.ttf ~/.local/share/fonts
 rm -rf CascadiaMono.zip CascadiaFont
 
-wget -O iafonts.zip https://github.com/iaolo/iA-Fonts/archive/refs/heads/master.zip
-unzip iafonts.zip -d iaFonts
-cp iaFonts/iA-Fonts-master/iA\ Writer\ Mono/Static/iAWriterMonoS-*.ttf ~/.local/share/fonts
-rm -rf iafonts.zip iaFonts
 sudo fc-cache -f -v
 
 # ADD GLOBAL THEMES
@@ -141,9 +110,7 @@ sudo usermod -aG vboxusers ${USER}
 #sudo chmod 644 /usr/share/backgrounds/
 
 # Gnome Theme Settings
-sudo apt install -y gnome-shell-extension-manager pipx
 pipx install gnome-extensions-cli --system-site-packages
-
 
 #gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 #gsettings set org.gnome.desktop.interface cursor-theme 'Yaru'
