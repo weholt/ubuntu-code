@@ -114,11 +114,6 @@ cd ~
 mkdir -p ~/.themes
 mkdir -p ~/.icons
 
-sudo sh -c "echo 'deb http://download.opensuse.org/repositories/home:/Horst3180/xUbuntu_18.04/ /' > /etc/apt/sources.list.d/home:Horst3180.list"
-sudo apt-get update
-sudo apt-get install arc-theme  -y
-
-
 pipx install gnome-extensions-cli --system-site-packages
 
 #gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'

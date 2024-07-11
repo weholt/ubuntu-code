@@ -1,0 +1,9 @@
+factory-boy
+pytest-django
+pytest
+black
+flake8
+isort
+coverage
+tox
+pip-tools

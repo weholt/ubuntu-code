@@ -1,0 +1,11 @@
+Wagtail
+django-modelcluster
+django-taggit
+draftjs_exporter
+Willow
+boto3
+botocore
+django-storages
+Pillow
+beautifulsoup4
+requests
