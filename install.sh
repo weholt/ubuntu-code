@@ -117,8 +117,7 @@ mkdir -p ~/.icons
 sudo add-apt-repository ppa:papirus/papirus -y
 
 sudo apt update
-sudo apt install paper-gtk-theme paper-icon-theme paper-cursor-theme papirus-icon-theme \
-pop-icon-theme materia-gtk-theme -y
+sudo apt install papirus-icon-theme pop-icon-theme materia-gtk-theme -y
 
 sudo sh -c "echo 'deb http://download.opensuse.org/repositories/home:/Horst3180/xUbuntu_18.04/ /' > /etc/apt/sources.list.d/home:Horst3180.list"
 sudo apt-get update
