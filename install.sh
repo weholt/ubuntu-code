@@ -114,39 +114,20 @@ cd ~
 mkdir -p ~/.themes
 mkdir -p ~/.icons
 
-sudo add-apt-repository ppa:daniruiz/flat-remix
+sudo add-apt-repository ppa:daniruiz/flat-remix -y
+sudo add-apt-repository ppa:snwh/pulp -y
+sudo apt-add-repository ppa:numix/ppa -y
+sudo add-apt-repository ppa:papirus/papirus -y
+sudo add-apt-repository ppa:dyatlov-igor/sierra-theme -y
+sudo apt-add-repository ppa:tista/adapta -y
+
 sudo apt update
-sudo apt install flat-remix-gnome
-
-sudo add-apt-repository ppa:snwh/pulp
-sudo apt-get update
-sudo apt-get install paper-gtk-theme
-
-sudo apt-get install paper-icon-theme
-sudo apt-get install paper-cursor-theme
-
-sudo apt-add-repository ppa:numix/ppa
-sudo apt update
-sudo apt install numix-icon-theme-circle
-
-sudo add-apt-repository ppa:papirus/papirus
-sudo apt update
-sudo apt install papirus-icon-theme
-
-sudo apt install pop-icon-theme
-sudo apt install materia-gtk-theme
-
-sudo add-apt-repository ppa:dyatlov-igor/sierra-theme
-sudo apt update
-sudo apt install sierra-gtk-theme-git   # git master branch
+sudo apt install flat-remix-gnome paper-gtk-theme paper-icon-theme paper-cursor-theme numix-icon-theme-circle papirus-icon-theme pop-icon-theme materia-gtk-theme sierra-gtk-theme-git adapta-gtk-theme -y
 
 sudo sh -c "echo 'deb http://download.opensuse.org/repositories/home:/Horst3180/xUbuntu_18.04/ /' > /etc/apt/sources.list.d/home:Horst3180.list"
 sudo apt-get update
-sudo apt-get install arc-theme
+sudo apt-get install arc-theme  -y
 
-sudo apt-add-repository ppa:tista/adapta
-sudo apt-get update 
-sudo apt-get install adapta-gtk-theme
 
 pipx install gnome-extensions-cli --system-site-packages
 
