@@ -109,7 +109,45 @@ sudo usermod -aG vboxusers ${USER}
 #sudo cp ~/.local/share/ubuntu-code/backgrounds/*.* /usr/share/backgrounds/
 #sudo chmod 644 /usr/share/backgrounds/
 
-# Gnome Theme Settings
+# Gnome Themes & Settings
+cd ~
+mkdir -p ~/.themes
+mkdir -p ~/.icons
+
+sudo add-apt-repository ppa:daniruiz/flat-remix
+sudo apt update
+sudo apt install flat-remix-gnome
+
+sudo add-apt-repository ppa:snwh/pulp
+sudo apt-get update
+sudo apt-get install paper-gtk-theme
+
+sudo apt-get install paper-icon-theme
+sudo apt-get install paper-cursor-theme
+
+sudo apt-add-repository ppa:numix/ppa
+sudo apt update
+sudo apt install numix-icon-theme-circle
+
+sudo add-apt-repository ppa:papirus/papirus
+sudo apt update
+sudo apt install papirus-icon-theme
+
+sudo apt install pop-icon-theme
+sudo apt install materia-gtk-theme
+
+sudo add-apt-repository ppa:dyatlov-igor/sierra-theme
+sudo apt update
+sudo apt install sierra-gtk-theme-git   # git master branch
+
+sudo sh -c "echo 'deb http://download.opensuse.org/repositories/home:/Horst3180/xUbuntu_18.04/ /' > /etc/apt/sources.list.d/home:Horst3180.list"
+sudo apt-get update
+sudo apt-get install arc-theme
+
+sudo apt-add-repository ppa:tista/adapta
+sudo apt-get update 
+sudo apt-get install adapta-gtk-theme
+
 pipx install gnome-extensions-cli --system-site-packages
 
 #gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
@@ -124,6 +162,8 @@ gsettings set org.gnome.desktop.wm.preferences theme "Nordic"
 gsettings set org.gnome.mutter center-new-windows true
 gsettings set org.gnome.desktop.interface monospace-font-name 'CaskaydiaMono Nerd Font 10'
 gsettings set org.gnome.desktop.calendar show-weekdate true
+gsettings set org.gnome.desktop.interface icon-theme candy-icons
+
 
 
 # CLEANUP
