@@ -107,7 +107,7 @@ echo "Cloning UbuntuCode..."
 rm -rf ~/.local/share/ubuntu-code
 git clone https://github.com/weholt/ubuntu-code.git ~/.local/share/ubuntu-code >/dev/null
 sudo cp ~/.local/share/ubuntu-code/backgrounds/*.* /usr/share/backgrounds/
-sudo chmod 644 /usr/share/backgrounds/
+sudo chmod -R a+r /usr/share/backgrounds
 
 # Gnome Themes & Settings
 cd ~
