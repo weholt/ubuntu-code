@@ -1,0 +1,22 @@
+# UbuntuCode
+
+A simple script to setup a fresh Ubuntu install for (mainly Python) development.
+Heavily inspired by Omakub.org.
+
+## Features
+- Visual Studio Code
+- Docker 
+- Github CLI tools
+- Fastfetch
+- Flatpak
+- flameshot
+- gnome-sushi
+- gnome-tweak-tool
+- Typora
+- vlc 
+- gnome-shell-extension-manager
+- Nerdfonts
+- Brave Browser
+- Spotify
+- VirtualBox
+- Starship Shell
