@@ -78,10 +78,11 @@ cd /usr/share/themes
 sudo rm -rf /usr/share/themes/Ant
 sudo rm -rf /usr/share/themes/Nordic
 sudo rm -rf /usr/share/themes/Otis
-sudo rm -rf /usr/share/themes/snow
+sudo rm -rf /usr/share/themes/Snow
 sudo git clone https://github.com/EliverLara/Ant
 sudo git clone https://github.com/EliverLara/Nordic
 sudo git clone https://github.com/EliverLara/Otis
+sudo git clone https://github.com/EliverLara/Snow
 https://github.com/EliverLara/snow
 sudo chmod -R a+r /usr/share/themes
 
