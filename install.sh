@@ -1,5 +1,6 @@
 set -e
-
+sudo apt-add-repository universe
+sudo apt-add-repository multiverse
 sudo apt update -y
 sudo apt upgrade -y
 sudo apt install -y \
@@ -12,7 +13,7 @@ sudo apt install -y \
 
 
 # Docker 
-sudo apt install -y docker.io docker-buildx containerd.io docker-buildx-plugin docker-compose-plugin 
+sudo apt install -y docker.io docker-compose-plugin 
 sudo usermod -aG docker ${USER}
 
 # Github CLI tools
@@ -47,7 +48,7 @@ sudo apt update
 sudo apt install -y typora
 
 # Misc tools and apps
-sudo apt install -y vlc gnome-shell-extension-manager gnome-shell-extension
+sudo apt install -y vlc gnome-shell-extension-manager
 
 # Visual Studio Code
 cd /tmp
@@ -73,12 +74,14 @@ sudo fc-cache -f -v
 
 # ADD GLOBAL THEMES
 cd /usr/share/themes
+sudo rm -rf /usr/share/themes/Ant
+sudo rm -rf /usr/share/themes/Nordic
 sudo git clone https://github.com/EliverLara/Ant
 sudo git clone https://github.com/EliverLara/Nordic
 
 # ADD GLOBAL FONTS
 sudo wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/JetBrainsMono.zip
-sudo unzip JetBrainsMono.zip -d /usr/share/fonts/
+sudo unzip -o JetBrainsMono.zip -d /usr/share/fonts/
 sudo fc-cache -f -v
 
 
@@ -104,23 +107,26 @@ rm -rf ~/.local/share/ubuntu-code
 git clone https://github.com/weholt/ubuntu-code.git ~/.local/share/ubuntu-code >/dev/null
 
 # Gnome Theme Settings
-THEME_FOLDER = "$HOME/.local/share/ubuntu-code/nord"
-BACKGROUND = "$THEME_FOLDER/background.png"
+sudo apt install -y gnome-shell-extension-manager pipx
+pipx install gnome-extensions-cli --system-site-packages
 
-gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
-gsettings set org.gnome.desktop.interface cursor-theme 'Yaru'
+
+#gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+#gsettings set org.gnome.desktop.interface cursor-theme 'Yaru'
 gsettings set org.gnome.desktop.interface gtk-theme "Yaru-blue-dark"
 gsettings set org.gnome.desktop.interface icon-theme "Yaru-blue"
-gsettings set org.gnome.desktop.background picture-uri $BACKGROUND
-gsettings set org.gnome.desktop.background picture-uri-dark $BACKGROUND
+gsettings set org.gnome.desktop.background picture-uri ~/.local/share/ubuntu-code/themes/nord/background.png
 gsettings set org.gnome.desktop.background picture-options 'zoom'
+gsettings set org.gnome.shell.extensions.dash-to-dock extend-height false
 
+
+# Setup user shell
+mkdir -p ~/.config && touch ~/.config/starship.toml
+sudo curl -sS https://starship.rs/install.sh | sh
+echo eval "$(starship init zsh)" >> ~/.zshrc
+starship preset pastel-powerline -o ~/.config/starship.toml
 
 # CLEANUP
 sudo apt-get clean
 sudo apt-get autoremove --purge
-
-
-sudo curl -sS https://starship.rs/install.sh | sh
-echo eval "$(starship init zsh)" >> ~/.zshrc
-starship preset pastel-powerline -o ~/.config/starship.toml
+sudo apt autoclean
