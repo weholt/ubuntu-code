@@ -10,7 +10,7 @@ sudo apt install -y \
 	redis-tools sqlite3 libsqlite3-0 fzf ripgrep bat eza zoxide plocate btop apache2-utils fd-find \
     software-properties-common zsh gnome-tweaks gnome-shell-extension-manager virt-manager qemu-kvm mc \
     ca-certificates chromium vlc virt-manager usb-creator-gtk gparted gnome-sushi gnome-tweak-tool gnome-shell-extension-manager \
-    gnome-shell-extension-manager pipx
+    gnome-shell-extension-manager pipx nodejs npm golang-go
 
 
 # Docker 
