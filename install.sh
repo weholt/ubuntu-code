@@ -13,7 +13,7 @@ sudo apt install -y \
 
 
 # Docker 
-sudo apt install -y docker.io docker-compose-plugin 
+sudo apt install -y docker.io
 sudo usermod -aG docker ${USER}
 
 # Github CLI tools
