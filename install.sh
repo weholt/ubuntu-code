@@ -115,12 +115,11 @@ mkdir -p ~/.themes
 mkdir -p ~/.icons
 
 sudo add-apt-repository ppa:papirus/papirus -y
-sudo add-apt-repository ppa:dyatlov-igor/sierra-theme -y
 sudo apt-add-repository ppa:tista/adapta -y
 
 sudo apt update
 sudo apt install paper-gtk-theme paper-icon-theme paper-cursor-theme papirus-icon-theme \
-pop-icon-theme materia-gtk-theme sierra-gtk-theme-git adapta-gtk-theme -y
+pop-icon-theme materia-gtk-theme adapta-gtk-theme -y
 
 sudo sh -c "echo 'deb http://download.opensuse.org/repositories/home:/Horst3180/xUbuntu_18.04/ /' > /etc/apt/sources.list.d/home:Horst3180.list"
 sudo apt-get update
