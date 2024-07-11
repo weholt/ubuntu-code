@@ -103,11 +103,11 @@ sudo apt install -y spotify-client
 sudo apt install -y virtualbox virtualbox-ext-pack
 sudo usermod -aG vboxusers ${USER}
 
-#echo "Cloning UbuntuCode..."
-#rm -rf ~/.local/share/ubuntu-code
-#git clone https://github.com/weholt/ubuntu-code.git ~/.local/share/ubuntu-code >/dev/null
-#sudo cp ~/.local/share/ubuntu-code/backgrounds/*.* /usr/share/backgrounds/
-#sudo chmod 644 /usr/share/backgrounds/
+echo "Cloning UbuntuCode..."
+rm -rf ~/.local/share/ubuntu-code
+git clone https://github.com/weholt/ubuntu-code.git ~/.local/share/ubuntu-code >/dev/null
+sudo cp ~/.local/share/ubuntu-code/backgrounds/*.* /usr/share/backgrounds/
+sudo chmod 644 /usr/share/backgrounds/
 
 # Gnome Themes & Settings
 cd ~
