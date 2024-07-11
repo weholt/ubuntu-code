@@ -105,9 +105,10 @@ sudo apt install -y virtualbox virtualbox-ext-pack
 sudo usermod -aG vboxusers ${USER}
 
 echo "Cloning UbuntuCode..."
-sudo rm -rf /usr/share/ubuntu-code
-sudo git clone https://github.com/weholt/ubuntu-code.git /usr/share/ubuntu-code >/dev/null
-sudo cp /usr/share/ubuntu-code/backgrounds/*.* /usr/share/backgrounds/
+cd /usr/local
+sudo rm -rf /usr/local/ubuntu-code
+sudo git clone https://github.com/weholt/ubuntu-code.git /usr/local/ubuntu-code
+sudo cp /usr/local/ubuntu-code/backgrounds/*.* /usr/share/backgrounds/
 sudo chmod -R a+r /usr/share/backgrounds
 
 # Gnome Themes & Settings
