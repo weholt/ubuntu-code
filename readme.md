@@ -22,3 +22,11 @@ Heavily inspired by Omakub.org.
 - Spotify
 - VirtualBox
 - Starship Shell
+
+## Installation
+
+Copy and paste this in your terminal:
+
+``` bash
+    eval "$(wget -qO- https://raw.githubusercontent.com/weholt/ubuntu-code/master/install.sh)"
+```
