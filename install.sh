@@ -83,7 +83,6 @@ sudo git clone https://github.com/EliverLara/Ant
 sudo git clone https://github.com/EliverLara/Nordic
 sudo git clone https://github.com/EliverLara/Otis
 sudo git clone https://github.com/EliverLara/Snow
-https://github.com/EliverLara/snow
 sudo chmod -R a+r /usr/share/themes
 
 # ADD GLOBAL FONTS
@@ -114,6 +113,8 @@ cd /usr/local
 sudo rm -rf /usr/local/ubuntu-code
 sudo git clone https://github.com/weholt/ubuntu-code.git /usr/local/ubuntu-code
 sudo cp /usr/local/ubuntu-code/backgrounds/*.* /usr/share/backgrounds/
+mkdir -p ~/Pictures/backgrounds/
+sudo cp /usr/local/ubuntu-code/backgrounds/*.* ~/Pictures/backgrounds/
 sudo chmod -R a+r /usr/share/backgrounds
 
 # Gnome Themes & Settings
