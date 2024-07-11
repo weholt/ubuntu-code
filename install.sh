@@ -9,7 +9,7 @@ sudo apt install -y \
 	libvips imagemagick libmagickwand-dev mupdf mupdf-tools \
 	redis-tools sqlite3 libsqlite3-0 fzf ripgrep bat eza zoxide plocate btop apache2-utils fd-find \
     software-properties-common zsh gnome-tweaks gnome-shell-extension-manager virt-manager qemu-kvm mc \
-    ca-certificates chromium vlc virt-manager 
+    ca-certificates chromium vlc virt-manager usb-creator-gtk gparted 
 
 
 # Docker 
@@ -40,6 +40,38 @@ sudo apt install -y flameshot
 # Gives you previews in the file manager when pressing space
 sudo apt install -y gnome-sushi
 sudo apt install -y gnome-tweak-tool
+
+# GitKraken
+cd /tmp
+wget https://release.gitkraken.com/linux/gitkraken-amd64.deb
+sudo apt install /tmp/gitkraken-amd64.deb
+rm -rf /tmp/gitkraken-amd64.deb
+cd -
+
+# Oh My Posh
+## Install Oh my Posh
+sudo wget https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/posh-linux-amd64 -O /usr/local/bin/oh-my-posh
+sudo chmod +x /usr/local/bin/oh-my-posh
+
+## Download the Oh My Posh themes
+cd ~
+mkdir -p ~/.poshthemes
+wget https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/themes.zip -O ~/.poshthemes/themes.zip
+unzip -o ~/.poshthemes/themes.zip -d ~/.poshthemes
+chmod u+rw ~/.poshthemes/*.json
+rm ~/.poshthemes/themes.zip
+oh-my-posh init bash --config .poshthemes/montys.omp.json > .oh-my-post-init.sh
+echo "source .oh-my-post-init.sh" >> .bashrc
+cd -
+
+# Downdload the fonts for Oh My Posh
+cd ~
+mkdir -p .fonts
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/JetBrainsMono.zip
+rm -rf ~/.fonts/JetBrainsMono
+unzip ~/JetBrainsMono.zip -d ~/.fonts/JetBrainsMono
+fc-cache -fv
+
 
 # Typora
 wget -qO - https://typora.io/linux/public-key.asc | sudo tee /etc/apt/trusted.gpg.d/typora.asc
@@ -106,6 +138,9 @@ echo "Cloning UbuntuCode..."
 rm -rf ~/.local/share/ubuntu-code
 git clone https://github.com/weholt/ubuntu-code.git ~/.local/share/ubuntu-code >/dev/null
 
+sudo cp ~/.local/share/ubuntu-code/backgrounds/*.* /usr/share/backgrounds/
+sudo chmod 644 /usr/share/backgrounds/
+
 # Gnome Theme Settings
 sudo apt install -y gnome-shell-extension-manager pipx
 pipx install gnome-extensions-cli --system-site-packages
@@ -115,18 +150,19 @@ pipx install gnome-extensions-cli --system-site-packages
 #gsettings set org.gnome.desktop.interface cursor-theme 'Yaru'
 gsettings set org.gnome.desktop.interface gtk-theme "Yaru-blue-dark"
 gsettings set org.gnome.desktop.interface icon-theme "Yaru-blue"
-gsettings set org.gnome.desktop.background picture-uri ~/.local/share/ubuntu-code/themes/nord/background.png
+gsettings set org.gnome.desktop.background picture-uri "file://~/.local/share/ubuntu-code/themes/nord/background.png"
 gsettings set org.gnome.desktop.background picture-options 'zoom'
 gsettings set org.gnome.shell.extensions.dash-to-dock extend-height false
+gsettings set org.gnome.desktop.interface gtk-theme "Nordic"
+gsettings set org.gnome.desktop.wm.preferences theme "Nordic"
+gsettings set org.gnome.mutter center-new-windows true
+gsettings set org.gnome.desktop.interface monospace-font-name 'CaskaydiaMono Nerd Font 10'
+gsettings set org.gnome.desktop.calendar show-weekdate true
 
-
-# Setup user shell
-mkdir -p ~/.config && touch ~/.config/starship.toml
-sudo curl -sS https://starship.rs/install.sh | sh
-echo eval "$(starship init zsh)" >> ~/.zshrc
-starship preset pastel-powerline -o ~/.config/starship.toml
 
 # CLEANUP
+sudo apt-get update -y
+sudo apt-get upgrade -y
 sudo apt-get clean
 sudo apt-get autoremove --purge
 sudo apt autoclean

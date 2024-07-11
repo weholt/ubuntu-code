@@ -13,7 +13,9 @@ Heavily inspired by Omakub.org.
 - gnome-sushi
 - gnome-tweak-tool
 - Typora
-- vlc 
+- vlc
+- GitKraken
+- Oh My Posh
 - gnome-shell-extension-manager
 - Nerdfonts
 - Brave Browser
