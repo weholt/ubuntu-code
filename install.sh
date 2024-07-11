@@ -42,6 +42,8 @@ sudo apt install -y flameshot
 ## Install Oh my Posh
 sudo wget https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/posh-linux-amd64 -O /usr/local/bin/oh-my-posh
 sudo chmod +x /usr/local/bin/oh-my-posh
+sudo rm -rf ~/.oh-my-post-init.sh
+
 
 ## Download the Oh My Posh themes
 cd ~
@@ -60,6 +62,7 @@ mkdir -p .fonts
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/JetBrainsMono.zip
 rm -rf ~/.fonts/JetBrainsMono
 unzip ~/JetBrainsMono.zip -d ~/.fonts/JetBrainsMono
+rm -rf ~/JetBrainsMono.zip 
 fc-cache -fv
 
 # Add local fonts
