@@ -131,7 +131,7 @@ pipx install gnome-extensions-cli --system-site-packages
 #gsettings set org.gnome.desktop.interface cursor-theme 'Yaru'
 gsettings set org.gnome.desktop.interface gtk-theme "Yaru-blue-dark"
 gsettings set org.gnome.desktop.interface icon-theme "Yaru-blue"
-gsettings set org.gnome.desktop.background picture-uri "file:///usr/share/ubuntu-code/themes/nord/background.png"
+gsettings set org.gnome.desktop.background picture-uri "file:///usr/local/ubuntu-code/themes/nord/background.png"
 gsettings set org.gnome.desktop.background picture-options 'zoom'
 gsettings set org.gnome.shell.extensions.dash-to-dock extend-height false
 gsettings set org.gnome.desktop.interface gtk-theme "Nordic"
