@@ -106,7 +106,7 @@ sudo usermod -aG vboxusers ${USER}
 
 echo "Cloning UbuntuCode..."
 rm -rf /usr/share/ubuntu-code
-git clone https://github.com/weholt/ubuntu-code.git /usr/share/ubuntu-code >/dev/null
+sudo git clone https://github.com/weholt/ubuntu-code.git /usr/share/ubuntu-code >/dev/null
 sudo cp /usr/share/ubuntu-code/backgrounds/*.* /usr/share/backgrounds/
 sudo chmod -R a+r /usr/share/backgrounds
 
@@ -121,7 +121,7 @@ pipx install gnome-extensions-cli --system-site-packages
 #gsettings set org.gnome.desktop.interface cursor-theme 'Yaru'
 gsettings set org.gnome.desktop.interface gtk-theme "Yaru-blue-dark"
 gsettings set org.gnome.desktop.interface icon-theme "Yaru-blue"
-gsettings set org.gnome.desktop.background picture-uri "file://~/.local/share/ubuntu-code/themes/nord/background.png"
+gsettings set org.gnome.desktop.background picture-uri "file:///usr/share/ubuntu-code/themes/nord/background.png"
 gsettings set org.gnome.desktop.background picture-options 'zoom'
 gsettings set org.gnome.shell.extensions.dash-to-dock extend-height false
 gsettings set org.gnome.desktop.interface gtk-theme "Nordic"
