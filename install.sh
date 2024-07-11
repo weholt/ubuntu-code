@@ -77,8 +77,12 @@ sudo fc-cache -f -v
 cd /usr/share/themes
 sudo rm -rf /usr/share/themes/Ant
 sudo rm -rf /usr/share/themes/Nordic
+sudo rm -rf /usr/share/themes/Otis
+sudo rm -rf /usr/share/themes/snow
 sudo git clone https://github.com/EliverLara/Ant
 sudo git clone https://github.com/EliverLara/Nordic
+sudo git clone https://github.com/EliverLara/Otis
+https://github.com/EliverLara/snow
 sudo chmod -R a+r /usr/share/themes
 
 # ADD GLOBAL FONTS
