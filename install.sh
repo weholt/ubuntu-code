@@ -79,6 +79,7 @@ sudo rm -rf /usr/share/themes/Ant
 sudo rm -rf /usr/share/themes/Nordic
 sudo git clone https://github.com/EliverLara/Ant
 sudo git clone https://github.com/EliverLara/Nordic
+sudo chmod -R a+r /usr/share/themes
 
 # ADD GLOBAL FONTS
 sudo wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/JetBrainsMono.zip
