@@ -1,6 +1,6 @@
 set -e
 sudo apt-add-repository universe -y
-sudo apt-add-repository multiverse -y
+# sudo apt-add-repository multiverse -y
 sudo apt update -y
 sudo apt upgrade -y
 sudo apt install -y \
@@ -11,6 +11,15 @@ sudo apt install -y \
     software-properties-common zsh gnome-tweaks gnome-shell-extension-manager virt-manager qemu-kvm mc \
     ca-certificates chromium vlc virt-manager usb-creator-gtk gparted gnome-sushi gnome-tweak-tool gnome-shell-extension-manager \
     gnome-shell-extension-manager pipx nodejs npm golang-go
+
+sudo apt install -y \
+	curl git unzip wget build-essential pkg-config autoconf bison clang \
+	libssl-dev libreadline-dev zlib1g-dev libyaml-dev libncurses5-dev libffi-dev libgdbm-dev libjemalloc2 \
+	libvips imagemagick libmagickwand-dev mupdf mupdf-tools \
+	redis-tools sqlite3 libsqlite3-0 fzf ripgrep bat eza zoxide plocate btop apache2-utils fd-find \
+    software-properties-common zsh gnome-tweaks gnome-shell-extension-manager virt-manager qemu-kvm mc \
+    ca-certificates chromium vlc usb-creator-gtk gparted gnome-sushi gnome-tweak-tool \
+    pipx nodejs npm golang-go
 
 
 # Docker 
